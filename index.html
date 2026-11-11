@@ -1,32 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Consciousness and Agency | HNR 241</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Team Bernard | HNR 241: Consciousness and Agency</title>
+<meta name="description" content="Team Bernard's portfolio for HNR 241: builds, journals and the people behind them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Spectral:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
-  <a class="skip-link" href="#main">Skip to main content</a>
-
-  <header class="site-header">
-    <p class="site-title"><a href="index.html">Consciousness and Agency</a></p>
-    <nav aria-label="Main">
-      <ul>
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-      </ul>
+<body data-page="home">
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Team Bernard</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="index.html" data-nav="home">Home</a>
+      <a href="about.html" data-nav="about">About us</a>
+      <a href="builds.html" data-nav="builds">Builds</a>
+      <a href="journals.html" data-nav="journals">Journals</a>
     </nav>
-  </header>
+    <form class="search-form" action="search.html" method="get" role="search">
+      <label class="visually-hidden" for="q-home">Search the site</label>
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <input id="q-home" name="q" type="search" placeholder="Search builds and journals" autocomplete="off">
+    </form>
+  </div>
+</header>
+<main id="main">
+<section class="hero">
+  <img src="assets/img/maze.jpg" alt="A glowing circular maze with carved, patterned walls, and a lone figure at its entrance with light branching from their head into the paths.">
+  <div class="wrap">
+    <p class="course">HNR 241: Consciousness and Agency, Fall 2026</p>
+    <h1>Team Bernard</h1>
+    <p class="lede">Five students working through one question: does consciousness actually do anything? Our builds and journals follow it through Gell, Scarry, Milton and <em>Westworld</em>.</p>
+    <form class="search-form hero-search" action="search.html" method="get" role="search">
+      <label class="visually-hidden" for="hero-q">Search builds and journals</label>
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <input id="hero-q" name="q" type="search" placeholder="Search every build and journal entry">
+    </form>
+    <p class="hero-hints">Try <button type="button" data-try="maze">maze</button>, <button type="button" data-try="Gell">Gell</button>, <button type="button" data-try="free will">free will</button> or <button type="button" data-try="unfinished business">unfinished business</button>. <span id="stat-line"></span></p>
+  </div>
+</section>
 
-  <main id="main">
-    <h1>Consciousness and Agency</h1>
-    <p>We are an HNR 241 student group exploring consciousness, freedom, and how people and objects shape one another. Through our journal reflections, we connect course readings and lectures with our own questions and experiences.</p>
-    <p>Meet the students behind these reflections and explore what we are thinking about in <a href="about.html">About Us</a>.</p>
-  </main>
+<section class="section" id="maze-section">
+  <div class="wrap maze-layout">
+    <div id="maze"></div>
+    <div>
+      <h2>Every build is a ring</h2>
+      <p class="prose">Each build revises the one before it, so we laid them out as a maze. Build 1 is the outer wall, and every new build moves one ring closer to the center. Rings light up as builds are posted.</p>
+      <div class="maze-readout" id="maze-readout" aria-live="polite">
+        <p class="muted">Point at a ring to see who has written that build. Select it to open the build.</p>
+      </div>
+      <div class="actions"><a class="btn" href="builds.html">Open the maze of builds</a><a class="btn ghost" href="journals.html">Read the journals</a></div>
+    </div>
+  </div>
+</section>
 
-  <footer class="site-footer">
-    <p>HNR 241 student group portfolio.</p>
-  </footer>
+<section class="section" id="team">
+  <div class="wrap">
+    <div class="section-head"><h2>The team</h2><a href="about.html">More about us</a></div>
+    <ul class="roster" id="roster"></ul>
+  </div>
+</section>
+
+<section class="section" id="why">
+  <div class="wrap split">
+    <div class="prose">
+      <h2>Why Bernard</h2>
+      <p>Bernard Lowe spends the first season of <em>Westworld</em> studying the hosts’ minds, then learns that his own mind was built too. That is roughly where this class puts us: examining consciousness with the same consciousness we are trying to examine.</p>
+      <p>Each of us chose one quality of consciousness to follow through the semester: phenomenality, deliberation, reflexivity and reconsolidation. Our team reading, Alfred Gell’s <em>Art and Agency</em>, keeps returning to mazes and patterns that trap the mind, which is why both of our images are mazes.</p>
+      <p><a href="about.html#how">How the builds and journals fit together</a></p>
+    </div>
+    <figure>
+      <div class="frame"><img src="assets/img/brain.jpg" alt="A green human brain drawn as a maze, its folds formed by winding walls." loading="lazy"></div>
+      <figcaption>The mind as a maze. Generated by our team for the planning doc.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section" id="readings">
+  <div class="wrap">
+    <div class="section-head"><h2>Readings and links</h2><span class="muted">External links open in a new tab</span></div>
+    <ul class="refs">
+  <li><a href="https://en.wikipedia.org/wiki/Alfred_Gell" target="_blank" rel="noopener">Alfred Gell</a><span>Author of <em>Art and Agency</em>, our team reading on patterns, mazes and the distributed person.</span></li>
+  <li><a href="https://en.wikipedia.org/wiki/The_Body_in_Pain" target="_blank" rel="noopener">Elaine Scarry, <em>The Body in Pain</em></a><span>Projection, made objects, and “what it’s like to be me.”</span></li>
+  <li><a href="https://www.gutenberg.org/ebooks/26" target="_blank" rel="noopener">John Milton, <em>Paradise Lost</em></a><span>Full text. Build 5 reads the serpent’s “surging maze” in Book IX.</span></li>
+  <li><a href="https://plato.stanford.edu/entries/epiphenomenalism/" target="_blank" rel="noopener">Epiphenomenalism</a><span>The view that consciousness does no causal work, which Build 1 takes on.</span></li>
+  <li><a href="https://plato.stanford.edu/entries/descartes-epistemology/" target="_blank" rel="noopener">Descartes on doubt and the senses</a><span>Background for our first journal entries on illusion and the wax.</span></li>
+  <li><a href="https://plato.stanford.edu/entries/wittgenstein/" target="_blank" rel="noopener">Ludwig Wittgenstein</a><span>Family resemblance, and how it might define consciousness, freedom and the self.</span></li>
+  <li><a href="https://en.wikipedia.org/wiki/Lord%E2%80%93bondsman_dialectic" target="_blank" rel="noopener">Hegel’s master–slave dialectic</a><span>The frame for our journal entries on internal conflict.</span></li>
+  <li><a href="https://en.wikipedia.org/wiki/Westworld_(TV_series)" target="_blank" rel="noopener"><em>Westworld</em></a><span>The show the course reads alongside the philosophy.</span></li>
+</ul>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <p style="margin:0">Team Bernard, HNR 241: Consciousness and Agency, Fall 2026.</p>
+      <p style="margin:0">Maze and brain images generated by our team for the planning doc.</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="index.html">Home</a><a href="about.html">About us</a><a href="builds.html">Builds</a><a href="journals.html">Journals</a><a href="search.html">Search</a><a href="#main">Back to top</a>
+    </nav>
+  </div>
+</footer>
+<a class="to-top" href="#main">Back to top</a>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/journals.js"></script>
+<script src="assets/js/site.js"></script>
 </body>
 </html>

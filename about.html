@@ -1,68 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About Us | Consciousness and Agency</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About us | Team Bernard</title>
+<meta name="description" content="Team Bernard's portfolio for HNR 241: builds, journals and the people behind them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Spectral:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
-  <a class="skip-link" href="#main">Skip to main content</a>
-
-  <header class="site-header">
-    <p class="site-title"><a href="index.html">Consciousness and Agency</a></p>
-    <nav aria-label="Main">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" aria-current="page">About Us</a></li>
-      </ul>
+<body data-page="about">
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Team Bernard</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="index.html" data-nav="home">Home</a>
+      <a href="about.html" data-nav="about">About us</a>
+      <a href="builds.html" data-nav="builds">Builds</a>
+      <a href="journals.html" data-nav="journals">Journals</a>
     </nav>
-  </header>
+    <form class="search-form" action="search.html" method="get" role="search">
+      <label class="visually-hidden" for="q-about">Search the site</label>
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <input id="q-about" name="q" type="search" placeholder="Search builds and journals" autocomplete="off">
+    </form>
+  </div>
+</header>
+<main id="main">
+<header class="page-head"><div class="wrap">
+  <h1>About us</h1>
+  <p>We are HNR 241 students exploring consciousness, freedom, and how people and objects influence each other. Through journal reflections and a semester of builds, we connect course readings and lectures with our own questions and experiences.</p>
+  <div class="actions"><a class="btn" href="#members">Meet the team</a><a class="btn ghost" href="#how">How this site works</a><a class="btn ghost" href="#log">Decisions log</a></div>
+</div></header>
 
-  <main id="main">
-    <h1>About Us</h1>
-    <p>We are a student group exploring consciousness, freedom, and the ways people and objects shape one another. Our journals follow questions raised by our readings and lectures, including Descartes on the senses and self, Alfred Gell on art and agency, and Elaine Scarry on objects, bodies, and projection.</p>
-    <p>We come to these questions from different experiences and viewpoints. These reflections offer a snapshot of what each of us is thinking through.</p>
+<section class="section" id="members">
+  <div class="wrap">
+    <div class="section-head"><h2>Who we are</h2><span class="muted">In our own words, from the first week of class</span></div>
+    <div id="members-list"></div>
+  </div>
+</section>
 
-    <section aria-labelledby="alejandro-heading">
-      <h2 id="alejandro-heading">Alejandro</h2>
-      <p>Alejandro thinks of consciousness as an observer distinct from the physical self, and freedom as the ability to choose within limits. He connects discipline with self-understanding and the relationship between inner thought and the outside world. His reflections on Gell and Scarry consider how objects and decoration can carry agency and shape how we see reality.</p>
-      <blockquote><p>“I believe that understanding is the key for conscious thought – that self-awareness is necessary.”</p></blockquote>
-    </section>
+<section class="section" id="how">
+  <div class="wrap split">
+    <div class="prose">
+      <h2>How this site works</h2>
+      <p><b>Builds</b> are our essays. Each one revises the last, so reading a member’s builds in order shows an argument changing its mind. The <a href="builds.html">maze of builds</a> shows what has been posted, ring by ring.</p>
+      <p><b>Journals</b> are our weekly reflections. Every member answered the same prompts, so the <a href="journals.html">journals page</a> lines up all five answers to each prompt side by side.</p>
+      <p><b>Search</b> sits at the top of every page and looks through every build and journal entry at once.</p>
+    </div>
+    <figure>
+      <div class="frame"><img src="assets/img/maze.jpg" alt="A glowing circular maze with a figure at its entrance." loading="lazy"></div>
+      <figcaption>The maze that the builds page is drawn from. Generated by our team for the planning doc.</figcaption>
+    </figure>
+  </div>
+</section>
 
-    <section aria-labelledby="leah-heading">
-      <h2 id="leah-heading">Leah</h2>
-      <p>Leah began by understanding consciousness as thinking about one’s own thoughts and actions. Her experience of practicing tennis connects repetition with skill, confidence, and change. She is interested in how sensory experience and the agency people project onto art relate to consciousness, and how surroundings can influence who we become.</p>
-      <blockquote><p>“Serving over and over helped build muscle memory, and improve my consistency and overall power.”</p></blockquote>
-    </section>
-
-    <section aria-labelledby="robert-heading">
-      <h2 id="robert-heading">Robert</h2>
-      <p>Robert describes consciousness as awareness of emotions, actions, and the body, while questioning how much decisions come from conscious choice or impulse. He sees personal identity as both continuous and changing. His reading of Gell led him to consider how a person’s mind and influence can extend through objects and relationships beyond their physical presence.</p>
-      <blockquote><p>“When someone interacts with something you made, they are interacting with your mind, even if you are miles away or have been dead for centuries.”</p></blockquote>
-    </section>
-
-    <section aria-labelledby="nidhi-heading">
-      <h2 id="nidhi-heading">Nidhi</h2>
-      <p>Nidhi sees consciousness as connected to how we use knowledge and make decisions, and understands freedom as making choices without oppression. She is curious about what Gell means when objects related to a person have agency, and how that differs from an object simply being an heirloom. Her psychology studies also give her a scientific perspective on consciousness and the senses.</p>
-      <blockquote><p>“What is the difference between an object having a bestowed agency and an object just being an heirloom?”</p></blockquote>
-    </section>
-
-    <section aria-labelledby="emily-heading">
-      <h2 id="emily-heading">Emily</h2>
-      <p>Emily is part of our student group exploring consciousness, freedom, and how people and objects shape one another. Her individual journal reflections were not included in the planning notes shared for this portfolio.</p>
-    </section>
-
-    <section aria-labelledby="sakib-heading">
-      <h2 id="sakib-heading">Sakib</h2>
-      <p>Sakib is part of our student group exploring consciousness, freedom, and how people and objects shape one another. His individual journal reflections were not included in the planning notes shared for this portfolio.</p>
-    </section>
-
-    <p>Our ideas are still developing. We use these questions to connect our readings with everyday experiences and to learn from one another’s perspectives.</p>
-  </main>
-
-  <footer class="site-footer">
-    <p>HNR 241 student group portfolio.</p>
-  </footer>
+<section class="section" id="log">
+  <div class="wrap">
+    <h2>Decisions log</h2>
+    <ul class="log">
+      <li><b>Planning.</b> We agreed to build an About Us section from our journal entries.</li>
+      <li><b>October 7.</b> Website check-in. The site worked and the About Us page was almost done, but it still looked bare. We agreed it needed a theme and clearly separate sections.</li>
+      <li><b>November 10.</b> Moved to a dark theme built on our two maze images, and added the maze of builds, side-by-side journals, member pages and site search.</li>
+    </ul>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <p style="margin:0">Team Bernard, HNR 241: Consciousness and Agency, Fall 2026.</p>
+      <p style="margin:0">Maze and brain images generated by our team for the planning doc.</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="index.html">Home</a><a href="about.html">About us</a><a href="builds.html">Builds</a><a href="journals.html">Journals</a><a href="search.html">Search</a><a href="#main">Back to top</a>
+    </nav>
+  </div>
+</footer>
+<a class="to-top" href="#main">Back to top</a>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/journals.js"></script>
+<script src="assets/js/site.js"></script>
 </body>
 </html>
