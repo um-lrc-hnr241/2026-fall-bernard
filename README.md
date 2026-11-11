@@ -6,23 +6,23 @@ Unzip the folder and double-click `index.html`. Everything works offline except 
 ## Put it on GitHub
 1. Open the repo (`um-lrc-hnr241/2026-fall-bernard`) on github.com.
 2. Click **Add file > Upload files**.
-3. Drag in **everything inside this folder**: the `.html` files and the whole `assets` folder. Keep the folder structure.
+3. Drag in **everything inside this folder**: the `.html` files and the images, .css and .js files. Keep the folder structure.
 4. GitHub will ask to replace `index.html` and `about.html`. That's expected.
 5. Click **Commit changes**. The live site updates in a minute or two.
 
 ## Add a teammate's build
-Open `assets/js/data.js`. The instructions are at the top. Copy the template block into the `builds` list, fill in the member id, build number, title, summary and paragraphs, and save. The maze, the builds page, that member's page and search all update automatically.
+Open `data.js`. The instructions are at the top. Copy the template block into the `builds` list, fill in the member id, build number, title, summary and paragraphs, and save. The maze, the builds page, that member's page and search all update automatically.
 
 Member ids: `emily`, `sakib`, `alejandro`, `nidhi`, `member5`.
 
 ## Fix a name or add a member
-Edit the `members` list at the top of `assets/js/data.js`. "Teammate five" (`member5`) is a placeholder: change `"name"` to their real name and delete the `"placeholder": true` line.
+Edit the `members` list at the top of `data.js`. "Teammate five" (`member5`) is a placeholder: change `"name"` to their real name and delete the `"placeholder": true` line.
 
 ## Add a new build number (Build 6, 7...)
-Add `{"n": 6, "name": "Build 6"}` to `slots` in `assets/js/data.js`. A new ring appears in the maze.
+Add `{"n": 6, "name": "Build 6"}` to `slots` in `data.js`. A new ring appears in the maze.
 
 ## Edit journal entries
-They're in `assets/js/journals.js`, one entry per prompt per member.
+They're in `journals.js`, one entry per prompt per member.
 
 ## Files
 - `index.html`: home (hero, maze, team, readings)
@@ -32,5 +32,5 @@ They're in `assets/js/journals.js`, one entry per prompt per member.
 - `journals.html`: everyone's answers to each prompt, side by side
 - `member.html`: one page per person (`member.html?id=emily`)
 - `search.html`: site-wide search results
-- `assets/css/style.css`: all styling
-- `assets/js/site.js`: search, maze and filters (no need to edit)
+- `style.css`: all styling
+- `site.js`: search, maze and filters (no need to edit)

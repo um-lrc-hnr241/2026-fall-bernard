@@ -273,11 +273,11 @@
     var first = entries.filter(function (e) { return e.topic === "consciousness"; })[0];
     var html = '<header class="page-head"><div class="wrap"><nav class="crumbs"><a href="about.html">Team</a> / ' + esc(m.name) + "</nav><h1>" + esc(m.name) + "</h1>" +
       "<p>Writing on <b style=\"color:var(--brass);font-weight:500\">" + esc(m.quality.toLowerCase()) + "</b>: " + esc(m.qualityNote) + ".</p>" +
-      (m.placeholder ? '<p class="muted" style="font-size:1rem">Name to be added. Update this member in <code>assets/js/data.js</code>.</p>' : "") +
+      (m.placeholder ? '<p class="muted" style="font-size:1rem">Name to be added. Update this member in <code>data.js</code>.</p>' : "") +
       '<div class="actions"><a class="btn" href="#builds">' + (bs.length ? "Read builds" : "Builds") + '</a><a class="btn ghost" href="#journal">Read journal</a></div></div></header>';
     html += '<section class="section" id="builds"><div class="wrap maze-layout"><div id="maze"></div><div><h2>Builds</h2>';
     html += bs.length ? bs.map(function (b) { return '<div class="build-row" data-n="' + b.n + '"><div class="num">' + esc(slotName(b.n)) + '</div><div><h4><a href="' + buildUrl(b) + '">' + titles(esc(b.title)) + "</a></h4><p>" + titles(esc(b.summary)) + "</p></div></div>"; }).join("")
-      : '<p class="empty">No builds posted yet. They will appear here as soon as they are added to <code>assets/js/data.js</code>.</p>';
+      : '<p class="empty">No builds posted yet. They will appear here as soon as they are added to <code>data.js</code>.</p>';
     html += "</div></div></section>";
     html += '<section class="section" id="journal"><div class="wrap"><div class="section-head"><h2>Journal</h2><span class="muted">' + plural(entries.length, "entry").replace("entrys", "entries") + "</span></div>" +
       (first ? '<p class="prose" style="font-size:1.3rem">' + esc(first.text[0]) + "</p>" : "") +
