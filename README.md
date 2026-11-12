@@ -13,10 +13,10 @@ Unzip the folder and double-click `index.html`. Everything works offline except 
 ## Add a teammate's build
 Open `data.js`. The instructions are at the top. Copy the template block into the `builds` list, fill in the member id, build number, title, summary and paragraphs, and save. The maze, the builds page, that member's page and search all update automatically.
 
-Member ids: `emily`, `sakib`, `alejandro`, `nidhi`, `member5`.
+Member ids: `emily`, `sakib`, `alejandro`, `nidhi`, `leah`, `robert`. Use `team` for a group build.
 
 ## Fix a name or add a member
-Edit the `members` list at the top of `data.js`. "Teammate five" (`member5`) is a placeholder: change `"name"` to their real name and delete the `"placeholder": true` line.
+Edit the `members` list at the top of `data.js`.
 
 ## Add a new build number (Build 6, 7...)
 Add `{"n": 6, "name": "Build 6"}` to `slots` in `data.js`. A new ring appears in the maze.

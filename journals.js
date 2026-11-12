@@ -58,6 +58,10 @@ window.JOURNALS = {
    "label": "Our writing and Westworld as a whole"
   },
   {
+   "id": "apotropaic",
+   "label": "Gell’s apotropaic patterns and Hegel"
+  },
+  {
    "id": "object",
    "label": "An object I gave agency"
   },
@@ -244,7 +248,7 @@ window.JOURNALS = {
    ]
   },
   {
-   "member": "member5",
+   "member": "leah",
    "topic": "consciousness",
    "prompt": "How i used to understand consciousness",
    "text": [
@@ -252,7 +256,7 @@ window.JOURNALS = {
    ]
   },
   {
-   "member": "member5",
+   "member": "leah",
    "topic": "freedom",
    "prompt": "Freedom",
    "text": [
@@ -260,7 +264,7 @@ window.JOURNALS = {
    ]
   },
   {
-   "member": "member5",
+   "member": "leah",
    "topic": "lecture",
    "prompt": "Experience correlating to a lecture/ reading",
    "text": [
@@ -268,7 +272,7 @@ window.JOURNALS = {
    ]
   },
   {
-   "member": "member5",
+   "member": "leah",
    "topic": "confused",
    "prompt": "Aspect I don’t fully understand",
    "text": [
@@ -276,7 +280,7 @@ window.JOURNALS = {
    ]
   },
   {
-   "member": "member5",
+   "member": "leah",
    "topic": "repetition",
    "prompt": "A time when repetitive behavior changes me",
    "text": [
@@ -284,7 +288,7 @@ window.JOURNALS = {
    ]
   },
   {
-   "member": "member5",
+   "member": "leah",
    "topic": "discipline",
    "prompt": "Models of achieving consciousness: detachment vs discipline",
    "text": [
@@ -292,7 +296,7 @@ window.JOURNALS = {
    ]
   },
   {
-   "member": "member5",
+   "member": "leah",
    "topic": "same",
    "prompt": "Same person throughout our whole life",
    "text": [
@@ -300,7 +304,7 @@ window.JOURNALS = {
    ]
   },
   {
-   "member": "member5",
+   "member": "leah",
    "topic": "gell",
    "prompt": "New understanding on Gell",
    "text": [
@@ -308,7 +312,7 @@ window.JOURNALS = {
    ]
   },
   {
-   "member": "member5",
+   "member": "leah",
    "topic": "scarry",
    "prompt": "How Scarry connects with Gell",
    "text": [
@@ -316,7 +320,7 @@ window.JOURNALS = {
    ]
   },
   {
-   "member": "member5",
+   "member": "leah",
    "topic": "scarry-sum",
    "prompt": "Scarry reading summary",
    "text": [
@@ -324,7 +328,7 @@ window.JOURNALS = {
    ]
   },
   {
-   "member": "member5",
+   "member": "leah",
    "topic": "quality",
    "prompt": "Choosing phenomenality",
    "text": [
@@ -332,7 +336,7 @@ window.JOURNALS = {
    ]
   },
   {
-   "member": "member5",
+   "member": "leah",
    "topic": "westworld",
    "prompt": "How might my Build 3 apply to Westworld as a whole",
    "text": [
@@ -340,7 +344,7 @@ window.JOURNALS = {
    ]
   },
   {
-   "member": "member5",
+   "member": "leah",
    "topic": "object",
    "prompt": "A time when I assigned an object agency, and how much agency did I assign it.",
    "text": [
@@ -348,7 +352,7 @@ window.JOURNALS = {
    ]
   },
   {
-   "member": "member5",
+   "member": "leah",
    "topic": "resonated",
    "prompt": "Something that Hoffman said that resonated with me",
    "text": [
@@ -356,7 +360,7 @@ window.JOURNALS = {
    ]
   },
   {
-   "member": "member5",
+   "member": "leah",
    "topic": "master",
    "prompt": "Internal conflict and master-slave dialetc",
    "text": [
@@ -364,7 +368,7 @@ window.JOURNALS = {
    ]
   },
   {
-   "member": "member5",
+   "member": "leah",
    "topic": "undertaking",
    "prompt": "Sustained undertaking that ended up changing my view of who I am",
    "text": [
@@ -818,6 +822,185 @@ window.JOURNALS = {
    "prompt": "Identify one sustained undertaking in your life that ended up changing your view of who you were",
    "text": [
     "One sustained undertaking in my life that changed my view of who I am is when my grandmother passed away. She would always provide a lot of wisdom and advice, but my cousins and I would mess around with her and not take them seriously. Although we loved her and cared for, we liked joking around with her as well. But, after she passed away, it was like I went down a memory lane where I started recalling everything she told me. I try my best to implement them in my day to day life. For instance, going to sleep early and waking up early."
+   ]
+  },
+  {
+   "member": "robert",
+   "topic": "consciousness",
+   "prompt": "How did I understand consciousness before?",
+   "text": [
+    "The mental state in which you are aware of your emotions, actions, and control over your body and surroundings. It is an internal state of sensation."
+   ]
+  },
+  {
+   "member": "robert",
+   "topic": "freedom",
+   "prompt": "How did I understand freedom before?",
+   "text": [
+    "The capacity and free will to do anything you want to do or think whatever you wish with no one and no emotion stopping you."
+   ]
+  },
+  {
+   "member": "robert",
+   "topic": "lecture",
+   "prompt": "What lecture can I relate to?",
+   "text": [
+    "I somewhat relate to Descartes' questioning about the mind. I sometimes ask myself if I am truly consciously making my decisions or if my impulses are urging me to do things I would not otherwise do consciously."
+   ]
+  },
+  {
+   "member": "robert",
+   "topic": "confused",
+   "prompt": "What Am I Still Confused About in My Personal Reading?",
+   "text": [
+    "I still do not know what Gell is trying to get to in regards to who is controlling him or what he thinks the “I” includes. I want to dig deeper in understanding what he means by “I”."
+   ]
+  },
+  {
+   "member": "robert",
+   "topic": "repetition",
+   "prompt": "How has intentional, repetitive behavior changed you?",
+   "text": [
+    "A time in my life where a repetitive behavior changed me was my focus on making sure everything is up to standards in regards to anything in my life; whether it be organization, academic, or sports, I always strived to maintain the highest standards. It has changed me by making me a more trustworthy person by my professors, family, and friends."
+   ]
+  },
+  {
+   "member": "robert",
+   "topic": "discipline",
+   "prompt": "How has detachment and discipline related to my experience of achieving consciousness and is one more applicable than the other to my life?",
+   "text": [
+    "Discipline relates to my experience specifically by the role of consistency in my planning."
+   ]
+  },
+  {
+   "member": "robert",
+   "topic": "same",
+   "prompt": "Are we the same person our whole lives?",
+   "text": [
+    "The answer to this question is gray because we are more than one thing. We can be the same and different at the same time depending from which perspective you look at. Our physical self will always be our physical self, but with altered characteristics. We can perform surgeries to alter our physical self, but we continue being that same physical statue - just altered. Our inner self, though, which includes our thoughts, emotions, feelings, etc. can change and vary throughout time but that does not change who we are. Our personality will continue to change, but there will always be a characteristic of it left. In essence, we add and subtract from our inner self, but we continue with the same background."
+   ]
+  },
+  {
+   "member": "robert",
+   "topic": "gell",
+   "prompt": "What about my quote do I understand differently from when I chose it?",
+   "text": [
+    "> “A person and a person’s mind are not confined to particular spatio-temporal coordinates” (Gell 222)",
+    "When I first chose this quote, it resonated as a poetic or philosophical statement about the boundless nature of human connection, memory, or imagination. It feels like an assertion that our thoughts can travel anywhere, or that our impact outlives our physical presence. After more dissection, I figured it meant that your mind isn't just \"free\" in a spiritual sense; it is materially distributed across the world. When someone interacts with something you made, they are interacting with your mind, even if you are miles away or have been dead for centuries."
+   ]
+  },
+  {
+   "member": "robert",
+   "topic": "scarry",
+   "prompt": "How can Scarry’s reading converse with Gell’s reading? How do they connect? How do they overlap?",
+   "text": [
+    "Scarry’s The Body in Pain and Gell’s Art and Agency connect through the idea that humans project their thoughts, feelings, and intentions onto objects, which can then influence how we experience the world.",
+    "The main overlap is that both authors challenge the idea that objects are merely passive.",
+    "Scarry emphasizes how humans project aspects of themselves into the material world",
+    "Gell explores how these creations can subsequently act upon humans through their social relationships."
+   ]
+  },
+  {
+   "member": "robert",
+   "topic": "scarry-sum",
+   "prompt": "Personal summary of Scarry’s phenomenal account of consciousness (so that I can remember the main points)",
+   "text": [
+    "He reflects on how our projection of the human body onto different objects is done to try and explain our way of making sense of consciousness."
+   ]
+  },
+  {
+   "member": "robert",
+   "topic": "quality",
+   "prompt": "What type of consciousness did you choose to tell Gell’s Art and Agency and why?",
+   "text": [
+    "I'm particularly interested in narration, because Gell's discussion of biographies and objects existing beyond a person's physical boundaries gives us something to investigate that you didn't fully develop in Build 1.",
+    "I also chose narration to describe Alfred Gell’s theory of art and agency because art objects do not exist in a vacuum; they function as primary actors in social histories, relationships, and sequences of events over time. Gell’s seminal work, Art and Agency, shifts the definition of art away from aesthetics and toward how objects do things to people. Narration provides the perfect framework for this perspective because it captures the active, unfolding influence of an object."
+   ]
+  },
+  {
+   "member": "robert",
+   "topic": "wittgenstein",
+   "prompt": "How would Wittgenstein describe consciousness?",
+   "text": [
+    "He would describe consciousness as the buildup of knowledge, not a single moment: a public, active part of our everyday life. Just like a fiber is the complexation of many small pieces intertwined together, consciousness is the complexation of many moments."
+   ]
+  },
+  {
+   "member": "robert",
+   "topic": "wittgenstein",
+   "prompt": "What would Wittgenstein say about freedom?",
+   "text": [
+    "Freedom is not something we possess entirely on our own. We can try to be free and stand for oneself, but in order to be strong, we would need one another and therefore will not totally be free. Just like the rope needing a million fibers to make it a rope, the rope itself cannot be free by itself, but with many fibers."
+   ]
+  },
+  {
+   "member": "robert",
+   "topic": "wittgenstein",
+   "prompt": "What would Wittgenstein say about a self?",
+   "text": [
+    "A self is a relationship among the interactions of multiple independent parts. One cannot possess a “self” with only a single characteristic but rather multiple moving parts."
+   ]
+  },
+  {
+   "member": "robert",
+   "topic": "website",
+   "prompt": "How is our website turning out?",
+   "text": [
+    "In essence, we have the basics, which cover the requirements up to this point. We have the “About Us” page, even though it is pretty short, and we also have a “Home” page."
+   ]
+  },
+  {
+   "member": "robert",
+   "topic": "westworld",
+   "prompt": "How can I relate my essays/builds to Westworld as a whole?",
+   "text": [
+    "My argument applies to Westworld because consciousness develops when individuals connect past experiences to future expectations through a purpose.",
+    "Dolores initially repeats programmed narratives without remembering them, but as her memories return, she begins connecting her experiences to understand herself.",
+    "This reflects Gell’s idea of “unfinished business,” where repeated attempts at understanding sustain engagement. The maze represents this process because its importance lies not simply in reaching the center, but in the journey toward understanding.",
+    "Westworld suggests that consciousness emerges when individuals begin organizing their own experiences into a meaningful narrative rather than simply following one created for them."
+   ]
+  },
+  {
+   "member": "robert",
+   "topic": "apotropaic",
+   "prompt": "Connecting Gell’s apotropaic patterns to Hegel",
+   "text": [
+    "Gell’s idea of the apotropaic connects to Hegel through the relationship between consciousness and the external world. For Gell, apotropaic patterns protect against harmful forces by capturing and frustrating their attention through complexity. Rather than physically blocking an evil spirit, the pattern traps it in an endless attempt to understand what it sees. Hegel similarly argues that consciousness develops through its encounters with things outside itself, particularly when those encounters challenge its existing understanding. In both cases, frustration becomes important because it forces consciousness to continue engaging with something it cannot immediately comprehend. However, while Hegel emphasizes how these struggles can lead to greater self-understanding, Gell shows how an object can sustain engagement without ever allowing complete understanding.",
+    "Connection to Westworld: The maze resembles an apotropaic pattern because it continually redirects attention and frustrates attempts to reach its center. For Dolores, however, this struggle also resembles Hegel's account of developing self-consciousness, as navigating the maze forces her to confront her own memories and identity."
+   ]
+  },
+  {
+   "member": "robert",
+   "topic": "object",
+   "prompt": "What is something I have given agency to and is it still part of my life?",
+   "text": [
+    "One thing I have given agency to is my car.",
+    "I think of it as giving me independence because it allows me to travel, visit family, and make plans with friends. At the same time, its charging needs influence my decisions.",
+    "It is still part of my life, and its agency comes from how it shapes my actions and connects me to other people."
+   ]
+  },
+  {
+   "member": "robert",
+   "topic": "resonated",
+   "prompt": "What about today’s lecture resonated with me?",
+   "text": [
+    "In today’s lecture, professor Hoffman talks about Eve’s free will arises from the relationship she holds to herself. From that, I questioned whether he implied that Eve’s free will was her ability to pause and pick a deliberate response over a reflex given by the serpent."
+   ]
+  },
+  {
+   "member": "robert",
+   "topic": "master",
+   "prompt": "Identify some internal conflict you have experienced and try mapping it onto an internal master-slave dialect (Hegel/Fanon’s reading).",
+   "text": [
+    "One internal conflict I’ve experienced is deciding between pursuing a career that offers financial stability and prestige versus choosing something I genuinely enjoy. Through Hegel’s master-slave dialectic, the part of me focused on success acts as the master, trying to control my decisions, while the part that values personal happiness acts as the slave. However, the more I explore my interests and question my original plans, the more independent that second part becomes. This reflects Hegel’s idea that the slave develops self-consciousness through struggle. Ultimately, this conflict makes me question whether I’m truly making independent choices or simply following expectations I’ve internalized."
+   ]
+  },
+  {
+   "member": "robert",
+   "topic": "undertaking",
+   "prompt": "Identify one sustained undertaking in your life that ended up changing your view of who you were.",
+   "text": [
+    "After taking OChem at the University of Michigan, I saw that I was not the big chemist guy who I thought I was in high school, which changed my perception of myself. I started seeing myself more like a social science kind of person, and I ended up deviating from chemistry to psychology."
    ]
   }
  ]

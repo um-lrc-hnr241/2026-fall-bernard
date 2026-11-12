@@ -269,3 +269,9 @@ a[target="_blank"]::after { content: ""; display: inline-block; width: 0.6em; he
 .to-top { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 15; font: inherit; font-size: 0.9rem; color: var(--bone); background: var(--night-2); border: 1px solid var(--line); border-radius: 999px; padding: 0.45rem 1rem; text-decoration: none; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
 .to-top.show { opacity: 1; pointer-events: auto; }
 .maze-svg text, .maze-svg circle, .maze-svg line { pointer-events: none; }
+
+.tag { display: inline-block; margin-top: 0.3rem; font-family: var(--text); font-size: 0.8rem; color: var(--glow); border: 1px solid var(--brass-dim); border-radius: 999px; padding: 0 0.6rem; }
+.biblio { max-width: var(--measure); margin-top: 2.5rem; border-top: 1px solid var(--line); padding-top: 1rem; }
+.biblio summary { cursor: pointer; color: var(--brass); font-family: var(--display); font-size: 1.3rem; }
+.biblio ul { list-style: none; padding: 0; margin: 1rem 0 0; }
+.biblio li { padding-left: 2em; text-indent: -2em; margin-bottom: 0.6rem; color: var(--mist); font-size: 0.98rem; line-height: 1.55; }

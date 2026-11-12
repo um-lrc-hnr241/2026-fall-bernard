@@ -12,9 +12,15 @@
   function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
   function titles(html) { return html.replace(/Art and Agency/g, "<em>Art and Agency</em>").replace(/Paradise Lost/g, "<em>Paradise Lost</em>"); }
   function param(name) { return new URLSearchParams(location.search).get(name) || ""; }
-  function member(id) { return S.members.filter(function (m) { return m.id === id; })[0]; }
-  function posted(id) { return S.builds.filter(function (b) { return b.member === id; }).sort(function (a, b) { return a.n - b.n; }); }
-  function build(id, n) { return S.builds.filter(function (b) { return b.member === id && b.n === n; })[0]; }
+  var TEAM = { id: "team", name: S.team || "Team Bernard", quality: "", qualityNote: "" };
+  function member(id) { return id === "team" ? TEAM : S.members.filter(function (m) { return m.id === id; })[0]; }
+  function shared(b) { return b.member === "team"; }
+  function build(id, n) {
+    var own = S.builds.filter(function (b) { return b.member === id && b.n === n; })[0];
+    return own || S.builds.filter(function (b) { return shared(b) && b.n === n; })[0];
+  }
+  function posted(id) { return S.slots.map(function (s) { return build(id, s.n); }).filter(Boolean); }
+  function byline(b) { return shared(b) ? "the whole team" : member(b.member).name; }
   function slotName(n) { var s = S.slots.filter(function (x) { return x.n === n; })[0]; return s ? s.name : "Build " + n; }
   function buildUrl(b, extra) { return "build.html?m=" + b.member + "&n=" + b.n + (extra || ""); }
   function plural(n, w) { return n + " " + w + (n === 1 ? "" : "s"); }
@@ -94,9 +100,9 @@
     if (!list.length) {
       html += '<p class="who">Nobody has posted this build yet.</p>';
     } else {
-      html += '<p class="who">Posted by ' + list.map(function (b) { return esc(member(b.member).name); }).join(", ") + "</p>";
+      html += '<p class="who">' + (list.some(shared) ? "Written together by the whole team" : "Posted by " + list.map(function (b) { return esc(member(b.member).name); }).join(", ")) + "</p>";
       list.forEach(function (b) {
-        html += '<p><a href="' + buildUrl(b) + '">' + titles(esc(b.title)) + "</a>, by " + esc(member(b.member).name) + '<br><span class="muted">' + titles(esc(b.summary)) + "</span></p>";
+        html += '<p><a href="' + buildUrl(b) + '">' + titles(esc(b.title)) + "</a>, by " + esc(byline(b)) + '<br><span class="muted">' + titles(esc(b.summary)) + "</span></p>";
       });
     }
     el.innerHTML = html;
@@ -164,13 +170,13 @@
           var b = build(m.id, slot.n);
           if (q) {
             if (!b) return;
-            var hay = [b.title, b.summary].concat(b.paragraphs).join(" ");
+            var hay = [b.title, b.summary].concat(b.paragraphs, b.bibliography || []).join(" ");
             if (!matches(hay, q)) return;
           }
           shown += b ? 1 : 0;
           if (b) {
             var hit = q ? b.paragraphs.map(function (p, i) { return matches(p, q) ? i : -1; }).filter(function (i) { return i >= 0; }) : [];
-            rows += '<div class="build-row" id="' + (m.id + "-" + slot.n) + '" data-n="' + slot.n + '"><div class="num">' + esc(slot.name) + "</div><div><h4><a href=\"" + buildUrl(b, q ? "&q=" + encodeURIComponent(q) + (hit.length ? "#p" + (hit[0] + 1) : "") : "") + '">' + titles(esc(b.title)) + "</a></h4><p>" + mark(titles(esc(b.summary)), q) + "</p>" +
+            rows += '<div class="build-row" id="' + (m.id + "-" + slot.n) + '" data-n="' + slot.n + '"><div class="num">' + esc(slot.name) + (shared(b) ? '<br><span class="tag">Group build</span>' : "") + "</div><div><h4><a href=\"" + buildUrl(b, q ? "&q=" + encodeURIComponent(q) + (hit.length ? "#p" + (hit[0] + 1) : "") : "") + '">' + titles(esc(b.title)) + "</a></h4><p>" + mark(titles(esc(b.summary)), q) + "</p>" +
               (q && hit.length ? '<p class="muted">' + snippet(b.paragraphs[hit[0]], q) + "</p>" : "") + "</div></div>";
           } else {
             rows += '<div class="build-row pending" data-n="' + slot.n + '"><div class="num">' + esc(slot.name) + "</div><div><h4>Not posted yet</h4></div></div>";
@@ -190,25 +196,26 @@
   };
 
   pages.build = function () {
-    var id = param("m"), n = +param("n"), q = param("q"), b = build(id, n), m = member(id), root = $("#reader");
+    var id = param("m"), n = +param("n"), q = param("q"), b = S.builds.filter(function (x) { return x.member === id && x.n === n; })[0], m = member(id), root = $("#reader");
     if (!b || !m) {
       root.innerHTML = '<div class="prose"><h1>Build not found</h1><p>This link doesn’t match a posted build. <a href="builds.html">See all builds</a> instead.</p></div>';
       return;
     }
     document.title = b.title + " | " + m.name + " | Team Bernard";
-    var mine = posted(id), idx = mine.indexOf(b), prev = mine[idx - 1], next = mine[idx + 1];
+    var mine = S.builds.filter(function (x) { return x.member === id; }).sort(function (a, c) { return a.n - c.n; }), idx = mine.indexOf(b), prev = mine[idx - 1], next = mine[idx + 1];
     var others = S.builds.filter(function (x) { return x.n === n && x.member !== id; });
     var words = b.paragraphs.join(" ").split(/\s+/).length;
     root.innerHTML =
-      '<header><nav class="crumbs" aria-label="Breadcrumb"><a href="builds.html">Builds</a> / <a href="member.html?id=' + id + '">' + esc(m.name) + "</a> / " + esc(slotName(n)) + "</nav>" +
-      "<h1>" + titles(esc(b.title)) + '</h1><p class="byline">' + esc(m.name) + ", " + esc(slotName(n)) + ", about " + Math.max(1, Math.round(words / 230)) + " min read</p>" +
+      '<header><nav class="crumbs" aria-label="Breadcrumb"><a href="builds.html">Builds</a> / ' + (id === "team" ? '<a href="about.html">' + esc(m.name) + "</a>" : '<a href="member.html?id=' + id + '">' + esc(m.name) + "</a>") + " / " + esc(slotName(n)) + "</nav>" +
+      "<h1>" + titles(esc(b.title)) + '</h1><p class="byline">' + (id === "team" ? "Group build by the whole team" : esc(m.name)) + ", " + esc(slotName(n)) + ", about " + Math.max(1, Math.round(words / 230)) + " min read</p>" +
       '<p class="muted">' + titles(esc(b.summary)) + "</p>" +
       '<div class="tools"><button type="button" id="copy-link">Copy link</button><button type="button" id="size-up" aria-label="Larger text">Larger text</button><button type="button" id="size-down" aria-label="Smaller text">Smaller text</button>' + (q ? '<a class="btn ghost" href="' + buildUrl(b) + '">Clear highlights</a>' : "") + "</div></header>" +
       '<article class="essay" id="essay">' + b.paragraphs.map(function (p, i) { return para(p, q).replace(/^<(p|blockquote)>/, '<$1 id="p' + (i + 1) + '">'); }).join("") + "</article>" +
+      (b.bibliography ? '<details class="biblio"' + (q && matches(b.bibliography.join(" "), q) ? " open" : "") + '><summary>Bibliography (' + b.bibliography.length + " sources)</summary><ul>" + b.bibliography.map(function (e) { return "<li>" + mark(esc(e), q) + "</li>"; }).join("") + "</ul></details>" : "") +
       '<nav class="pager" aria-label="More builds by ' + esc(m.name) + '">' +
       (prev ? '<a class="prev" href="' + buildUrl(prev) + '"><small>Previous build</small>' + titles(esc(prev.title)) + "</a>" : "") +
-      (next ? '<a class="next" href="' + buildUrl(next) + '"><small>Next build</small>' + titles(esc(next.title)) + "</a>" : '<a class="next" href="member.html?id=' + id + '"><small>Done reading</small>Back to ' + esc(m.name) + "’s page</a>") + "</nav>" +
-      (others.length ? '<section class="prose" style="margin-top:3rem"><h2 style="font-size:1.6rem">Other takes on ' + esc(slotName(n)) + "</h2><ul>" + others.map(function (o) { return '<li><a href="' + buildUrl(o) + '">' + titles(esc(o.title)) + "</a>, by " + esc(member(o.member).name) + "</li>"; }).join("") + "</ul></section>" : "");
+      (next ? '<a class="next" href="' + buildUrl(next) + '"><small>Next build</small>' + titles(esc(next.title)) + "</a>" : (id === "team" ? '<a class="next" href="builds.html"><small>Done reading</small>Back to all builds</a>' : '<a class="next" href="member.html?id=' + id + '"><small>Done reading</small>Back to ' + esc(m.name) + "’s page</a>")) + "</nav>" +
+      (others.length ? '<section class="prose" style="margin-top:3rem"><h2 style="font-size:1.6rem">Other takes on ' + esc(slotName(n)) + "</h2><ul>" + others.map(function (o) { return '<li><a href="' + buildUrl(o) + '">' + titles(esc(o.title)) + "</a>, by " + esc(byline(o)) + "</li>"; }).join("") + "</ul></section>" : "");
     var size = 1.2, essay = $("#essay");
     $("#size-up").onclick = function () { size = Math.min(1.6, size + 0.1); essay.style.fontSize = size + "rem"; };
     $("#size-down").onclick = function () { size = Math.max(1, size - 0.1); essay.style.fontSize = size + "rem"; };
@@ -273,10 +280,9 @@
     var first = entries.filter(function (e) { return e.topic === "consciousness"; })[0];
     var html = '<header class="page-head"><div class="wrap"><nav class="crumbs"><a href="about.html">Team</a> / ' + esc(m.name) + "</nav><h1>" + esc(m.name) + "</h1>" +
       "<p>Writing on <b style=\"color:var(--brass);font-weight:500\">" + esc(m.quality.toLowerCase()) + "</b>: " + esc(m.qualityNote) + ".</p>" +
-      (m.placeholder ? '<p class="muted" style="font-size:1rem">Name to be added. Update this member in <code>data.js</code>.</p>' : "") +
-      '<div class="actions"><a class="btn" href="#builds">' + (bs.length ? "Read builds" : "Builds") + '</a><a class="btn ghost" href="#journal">Read journal</a></div></div></header>';
+            '<div class="actions"><a class="btn" href="#builds">' + (bs.length ? "Read builds" : "Builds") + '</a><a class="btn ghost" href="#journal">Read journal</a></div></div></header>';
     html += '<section class="section" id="builds"><div class="wrap maze-layout"><div id="maze"></div><div><h2>Builds</h2>';
-    html += bs.length ? bs.map(function (b) { return '<div class="build-row" data-n="' + b.n + '"><div class="num">' + esc(slotName(b.n)) + '</div><div><h4><a href="' + buildUrl(b) + '">' + titles(esc(b.title)) + "</a></h4><p>" + titles(esc(b.summary)) + "</p></div></div>"; }).join("")
+    html += bs.length ? bs.map(function (b) { return '<div class="build-row" data-n="' + b.n + '"><div class="num">' + esc(slotName(b.n)) + (shared(b) ? '<br><span class="tag">Group build</span>' : "") + '</div><div><h4><a href="' + buildUrl(b) + '">' + titles(esc(b.title)) + "</a></h4><p>" + titles(esc(b.summary)) + "</p></div></div>"; }).join("")
       : '<p class="empty">No builds posted yet. They will appear here as soon as they are added to <code>data.js</code>.</p>';
     html += "</div></div></section>";
     html += '<section class="section" id="journal"><div class="wrap"><div class="section-head"><h2>Journal</h2><span class="muted">' + plural(entries.length, "entry").replace("entrys", "entries") + "</span></div>" +
@@ -308,7 +314,7 @@
     S.members.forEach(function (m) { if (matches(m.name + " " + m.quality, q)) res.push({ kind: "Member", title: m.name, url: "member.html?id=" + m.id, text: "Writing on " + m.quality.toLowerCase() + ": " + m.qualityNote }); });
     S.builds.forEach(function (b) {
       var hits = b.paragraphs.map(function (p, i) { return matches(p, q) ? i : -1; }).filter(function (i) { return i >= 0; });
-      if (hits.length || matches(b.title + b.summary, q)) res.push({ kind: slotName(b.n) + " by " + member(b.member).name + (hits.length ? ", " + plural(hits.length, "paragraph") + " match" : ""), title: b.title, url: buildUrl(b, "&q=" + encodeURIComponent(q) + (hits.length ? "#p" + (hits[0] + 1) : "")), html: hits.length ? snippet(b.paragraphs[hits[0]], q) : mark(esc(b.summary), q), score: hits.length + 5 });
+      if (hits.length || matches(b.title + b.summary + (b.bibliography || []).join(" "), q)) res.push({ kind: slotName(b.n) + " by " + byline(b) + (hits.length ? ", " + plural(hits.length, "paragraph") + " match" : ""), title: b.title, url: buildUrl(b, "&q=" + encodeURIComponent(q) + (hits.length ? "#p" + (hits[0] + 1) : "")), html: hits.length ? snippet(b.paragraphs[hits[0]], q) : mark(esc(b.summary), q), score: hits.length + 5 });
     });
     J.entries.forEach(function (e) {
       var all = e.prompt + " " + e.text.join(" ");
