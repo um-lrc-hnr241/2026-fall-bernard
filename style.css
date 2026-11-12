@@ -275,3 +275,27 @@ a[target="_blank"]::after { content: ""; display: inline-block; width: 0.6em; he
 .biblio summary { cursor: pointer; color: var(--brass); font-family: var(--display); font-size: 1.3rem; }
 .biblio ul { list-style: none; padding: 0; margin: 1rem 0 0; }
 .biblio li { padding-left: 2em; text-indent: -2em; margin-bottom: 0.6rem; color: var(--mist); font-size: 0.98rem; line-height: 1.55; }
+
+/* ---------- Playable maze ---------- */
+.play-section { background: radial-gradient(ellipse at 28% 50%, rgba(201,164,95,0.08), transparent 60%); }
+.play-maze { width: 100%; max-width: 520px; border-radius: 50%; cursor: pointer; outline: none; }
+.play-maze:focus-visible { box-shadow: 0 0 0 2px var(--glow); }
+.play-svg { width: 100%; height: auto; display: block; overflow: visible; }
+.play-svg .walls { fill: none; stroke: var(--brass); stroke-width: 3.2; stroke-linecap: round; }
+.play-svg .trail { fill: none; stroke: rgba(240,212,154,0.35); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+.play-svg .goal-glow { fill: url(#playGlow); }
+.play-svg .dot { fill: #fff6df; }
+.play-svg .halo { fill: rgba(240,212,154,0.28); }
+.play-svg .player { transition: transform 0.14s ease-out; }
+.play-maze.bump .play-svg .halo { animation: bump 0.3s; }
+@keyframes bump { 0%, 100% { fill: rgba(240,212,154,0.28); } 50% { fill: rgba(220,120,90,0.55); } }
+.play-maze.solved .play-svg .goal-glow { animation: arrive 1.6s ease-out; }
+@keyframes arrive { 0% { r: 34; } 40% { r: 120; } 100% { r: 46; } }
+.pad { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.25rem 0 0.75rem; }
+.play-status { color: var(--mist); font-size: 0.98rem; display: flex; gap: 1.25rem; align-items: baseline; }
+.linkish { font: inherit; color: var(--brass); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+.linkish:hover { color: var(--glow); }
+.play-reveal { margin-top: 1.5rem; padding: 1.5rem 0 0; border-top: 1px solid var(--line); max-width: var(--measure); }
+.reveal-kicker { color: var(--glow); margin-bottom: 0.75rem; }
+.reveal-quote { margin: 0 0 0.75rem; font-family: var(--display); font-size: 1.45rem; line-height: 1.4; color: var(--bone); }
+.reveal-quote::before { content: "“"; color: var(--brass); } .reveal-quote::after { content: "”"; color: var(--brass); }

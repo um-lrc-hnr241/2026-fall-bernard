@@ -45,6 +45,27 @@
   </div>
 </section>
 
+<section class="section play-section" id="find-the-center">
+  <div class="wrap maze-layout">
+    <div class="play-wrap">
+      <div id="play-maze" class="play-maze" tabindex="0" role="application" aria-label="Playable maze. Use the arrow keys: up moves inward, down moves outward, left and right move around the ring." aria-describedby="play-help"></div>
+    </div>
+    <div>
+      <h2>Find the center</h2>
+      <p class="prose">Gell writes that you can know a maze has a way through and still be unable to see it. Try it: guide the light from the gap in the outer wall to the center, where a line from one of our builds is waiting.</p>
+      <p class="muted" id="play-help">Click the maze, then use the arrow keys. Up moves inward, down moves outward, and left and right move around the ring. You can also tap a neighboring space, or use the buttons.</p>
+      <div class="pad" role="group" aria-label="Maze controls">
+        <button type="button" class="chip" data-step="in">Inward</button>
+        <button type="button" class="chip" data-step="ccw">Counterclockwise</button>
+        <button type="button" class="chip" data-step="cw">Clockwise</button>
+        <button type="button" class="chip" data-step="out">Outward</button>
+      </div>
+      <p class="play-status"><span id="play-moves" aria-live="polite">0 steps</span> <button type="button" class="linkish" id="play-reset">New maze</button></p>
+      <div id="play-reveal" class="play-reveal" aria-live="polite" hidden></div>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="maze-section">
   <div class="wrap maze-layout">
     <div id="maze"></div>
@@ -112,5 +133,6 @@
 <script src="data.js"></script>
 <script src="journals.js"></script>
 <script src="site.js"></script>
+<script src="play.js"></script>
 </body>
 </html>
